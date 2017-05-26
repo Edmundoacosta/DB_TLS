@@ -9,7 +9,7 @@
 	<div class="contenedor_login">
 	   <div class="caja_modal_login">
 	       <div class="col-lg-8" id="modal_login" >
-	           <form class="form-horizontal" action="ac/login-exec.php">
+	           <form class="form-horizontal" action="ac/login-exec.php" method="post">
 	               <div class="image_form_login">
 	                  <img class="logo_login" id="logo" src='https://image.freepik.com/free-icon/macos-platform_318-33076.jpg' alt="">
 	               </div>

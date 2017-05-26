@@ -1,5 +1,6 @@
 <?php
 
+
 session_start();
 
 include_once '../config/database.php';
@@ -39,6 +40,7 @@ if($errflag) {
     exit();
 }
 
+
 // Aquí realizamos la consulta a la tabla usuario
 
 $query = "SELECT * FROM user WHERE nombre_usu = :login AND password_usu = :passwd";
@@ -49,6 +51,7 @@ $stmt->bindParam(':login', $login2);
 $stmt->bindParam(':passwd', $clave);
 $result = $stmt->execute();
 $num = $stmt->rowCount();
+//echo $num;
 
 // Aquí validamos la respuesta de la consulta y tomamos desiciones para mostrar una pantalla de respuesta.
 
@@ -58,8 +61,6 @@ if($result){
             extract($row);
             $_SESSION['SESS_MEMBER_ID'] = $row['id'];
             $_SESSION['SESS_FIRST_NAME'] = $row['nombre_usu'];
-            $_SESSION['SESS_ROL_ID'] = $row['rol_id'];
-            $_SESSION['SESS_ESTADO'] = $row['estado'];
 
             session_write_close();
             header("location: ../dashboard.php");
