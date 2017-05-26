@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  font-size: 14px;
+  color: #333;
+}
+
+img {
+    height: 100%;
+    width: 50px;
+    height: auto;
+}
+
+.contenedor_login {
+  background-image: url('https://www.labnutrition.com/media/storelocator/images/b/2/b2795d913e0e9c704e7543c238b59431.png');
+  background-position: 50% 50%;
+  display: block;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.caja_modal_login {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  margin: 0;
+  text-align: center;
+}
+
+.form-horizontal .control-login {
+    text-align: left;
+}
+
+
+form select, input {
+    -webkit-appearance: none;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    padding: 0 .2rem;
+}
+
+input[type='text'] select {
+	min-width: 153px;
+}
+
+.login-form {
+  display: block;
+}
+
+
+#modal_login {
+  background: #fff;
+  color: #535353;
+  width: 400px;
+  height: 500px;
+  z-index: 0;
+  padding: 2rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  margin: auto;
+  bottom: 0;
+  top: 0;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+
+button.dropdown-toggle {
+  display: flex;
+  font-size: 16px;
+  background: none;
+  color: #000;
+  border: none;
+  align-items: center;
+}
+
+.btn-login {
+  background-color: #323232;
+  color: #fff;
+  font-size: 1rem;
+  width: 45%;
+  border-radius: 0px;
+  height: 40px;
+  margin-top: 50px;
+  transition: all ease 0.7s;
+}
+
+.btn-login:hover {
+  background-color: #fff;
+  color: #000;
+  transition: all ease 0.7s;
+}
