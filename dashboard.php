@@ -1,9 +1,34 @@
 <!DOCTYPE html>
+<?php 
+	session_start();
+?>
 <html>
 <head>
-	<title></title>
+	<title>Listado</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<h2>Ingresaste</h2>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-2 user">
+				<div class="user-img"></div>
+				<h4><?php echo $_SESSION['SESS_FIRST_NAME'] ?></h4>
+				<p class="status">Conectado</p>
+				<ul>
+					<li id="list">PRODUCTOS</li>
+				</ul>
+			</div>
+			<div class="col-md-10">
+				<h2 id="page-title"></h2>
+				<div id="page-content"></div>
+			</div>
+		</div>
+	</div>
+	<script
+	  src="https://code.jquery.com/jquery-3.2.1.min.js"
+	  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	  crossorigin="anonymous"></script>
+	<script type="text/javascript" src="main.js"></script>
 </body>
 </html>

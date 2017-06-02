@@ -3,9 +3,10 @@
   padding: 0;
 }
 
-body, html {
+body, html, .row, .container-fluid {
   font-size: 14px;
   color: #333;
+  height: 100%;
 }
 
 img {
@@ -54,6 +55,20 @@ input[type='text'] select {
   display: block;
 }
 
+.status {
+  display: flex;
+  align-items: center;
+}
+
+.status::before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 6px;
+  height: 6px;
+  background-color: green;
+  margin-right: 5px;
+}
 
 #modal_login {
   background: #fff;
@@ -74,7 +89,38 @@ input[type='text'] select {
   flex-direction: column;
 }
 
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #061f33;
+  color: #fff;
+  padding: 50px 0px;
+  height: 100%;
+}
 
+.user ul {
+  width: 100%;
+}
+
+.user ul li {
+  width: 100%;
+  background-color: #c55d08;
+  padding: 5px 0px;
+}
+
+.user-img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background-size: 80% 80%;
+  background-position: center;
+  background-color: #ccc;
+  border: 2px solid #fff;
+  background-repeat: no-repeat;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/User_font_awesome.svg/1000px-User_font_awesome.svg.png');
+}
 
 button.dropdown-toggle {
   display: flex;

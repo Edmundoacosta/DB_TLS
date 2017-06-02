@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost_3306
+Source Server         : local
 Source Server Version : 100121
 Source Host           : localhost:3306
 Source Database       : bd_bodega
@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 100121
 File Encoding         : 65001
 
-Date: 2017-05-26 17:46:57
+Date: 2017-06-02 17:40:29
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -30,11 +30,13 @@ CREATE TABLE `articulo` (
   `categoria_idcategoria` int(11) NOT NULL,
   `cliente_idCliente` int(11) NOT NULL,
   PRIMARY KEY (`idarticulo`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of articulo
 -- ----------------------------
+INSERT INTO `articulo` VALUES ('1', 'Cuaderno', '1', '5.00', '7.00', '5', '1', '1', '1');
+INSERT INTO `articulo` VALUES ('2', 'Lapicero', '2', '2.00', '8.00', '10', '2', '2', '2');
 
 -- ----------------------------
 -- Table structure for categoria
@@ -117,10 +119,11 @@ CREATE TABLE `user` (
   `email_usu` varchar(45) DEFAULT NULL,
   `telefono_usu` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`iduser`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
 INSERT INTO `user` VALUES ('1', 'vicky', 'e10adc3949ba59abbe56e057f20f883e', 'vickychalam@yahoo.es', '991821846');
+INSERT INTO `user` VALUES ('2', 'ed', 'e10adc3949ba59abbe56e057f20f883e', 'edmundoach@hotmail.com', '992330712');
 SET FOREIGN_KEY_CHECKS=1;
