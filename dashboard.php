@@ -16,7 +16,8 @@
 				<h4><?php echo $_SESSION['SESS_FIRST_NAME'] ?></h4>
 				<p class="status">Conectado</p>
 				<ul>
-					<li id="list">PRODUCTOS</li>
+					<li><a id="list" href="#">PRODUCTOS</a></li>
+					<li><a id="list2" href="#">MARCAS</a></li>
 				</ul>
 			</div>
 			<div class="col-md-10">
