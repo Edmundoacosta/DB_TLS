@@ -22,6 +22,7 @@
 				echo "<th>Relacion Marca</th>";
 				echo "<th>Categoria</th>";
 				echo "<th>cliente_idCliente</th>";
+				echo "<th style='text-align:center;'>Accion</th>";
 			echo "</tr>";
 		while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 			extract($row);
@@ -35,6 +36,17 @@
 				echo "<td>{$marcas_idmarcas}</td>";
 				echo "<td>{$categoria_idcategoria}</td>";
 				echo "<td>{$cliente_idCliente}</td>";
+				echo "<td style='text-align:center;'>";
+					echo "<div class='marca-id display-none'>{$id}</div>";
+
+					echo "<div class='btn btn-info edit-btn margin-right-1em update-btn'>";
+						echo "<span class='glyphicon glyphicon-edit'></span> Edit";
+					echo "</div>";
+
+					echo "<div class='btn btn-danger delete-btn'>";
+						echo "<span class='glyphicon glyphicon-remove'></span> Delete";
+					echo "</div>";
+				echo "</td>";
 
 			echo "</tr>";
 		}

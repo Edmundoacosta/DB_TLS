@@ -12,6 +12,7 @@ $(document).ready(function(){
 	}
 
 	function changePageTitle(page_title){
+		$('#btn-add').removeClass('display-none');
 		$('#page-title').text(page_title);
 		document.title=page_title;
 	}
@@ -24,4 +25,15 @@ $(document).ready(function(){
 			});
 		});
 	}
+
+	$(document).on('click', '.delete-btn', function(){
+		if (confirm('Estas Seguro?')) {
+			console.log(this)
+			var marca_id = $(this).closest('td').find('.marca-id').text();
+			$.post("delete.articulo.php", { id: marca_id })
+			.done( function(data){
+				showMarcas();
+			});
+		}
+	});
 });
