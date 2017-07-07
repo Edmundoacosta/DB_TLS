@@ -86,13 +86,13 @@
 						SET
 							estado = :estado
 						WHERE
-							idarticulo = :idarticulo";
+							id = :id";
 
 
 			$stmt = $this->conn->prepare($query);
 
 			$stmt->bindParam(':estado', $this->estado);
-			$stmt->bindParam(':idarticulo', $this->idarticulo);
+			$stmt->bindParam(':id', $this->id);
 
 			if ($stmt->execute()) {
 				return true;

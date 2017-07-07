@@ -38,7 +38,6 @@ $(document).ready(function(){
 
 	function add() {
 		$('#btn-add').click(function() {
-			console.log('hola');
 			changePageTitle('Crear un Articulo');
 			$('#page-content').load('./create_form_articulo.php', function(){
 				$('#page-content').fadeIn('slow');

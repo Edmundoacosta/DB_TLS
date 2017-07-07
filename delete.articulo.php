@@ -7,7 +7,7 @@
 
 	$articulo = new Articulo($db);
 
-	$articulo->idarticulo=$_POST['id'];
+	$articulo->id=$_POST['id'];
 	$articulo->estado="0";
 	$articulo->delete();
  ?>
