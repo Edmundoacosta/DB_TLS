@@ -23,6 +23,7 @@
 			</div>
 			<div class="col-md-10">
 				<h2 id="page-title"></h2>
+				<div id="btn-add" class="btn btn-info display-none">+ Crear Marca</div>
 				<div id="page-content"></div>
 			</div>
 		</div>

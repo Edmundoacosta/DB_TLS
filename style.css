@@ -25,6 +25,14 @@ img {
   height: 100vh;
 }
 
+#btn-add {
+  margin: 10px 0px; 
+}
+
+div.btn {
+  margin: 0px 5px;
+}
+
 .caja_modal_login {
   position: fixed;
   top: 0;
@@ -33,6 +41,10 @@ img {
   z-index: 2;
   margin: 0;
   text-align: center;
+}
+
+.display-none {
+  display: none;
 }
 
 .form-horizontal .control-login {
