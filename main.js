@@ -1,6 +1,7 @@
 $(document).ready(function(){
 	showProductos();
 	showMarcas();
+	logout();
 
 	function showProductos(){
 		$('#list').click(function(){
@@ -20,6 +21,14 @@ $(document).ready(function(){
 		$('#list2').click(function(){
 			changePageTitle('Lista de Marcas');
 			$('#page-content').load('read-marcas.php', function(){
+				$('#page-content').fadeIn('slow');
+			});
+		});
+	}
+
+	function logout() {
+		$('#logout').click(function(){
+			$('body').load('./ac/logout.php', function(){
 				$('#page-content').fadeIn('slow');
 			});
 		});

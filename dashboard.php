@@ -14,7 +14,8 @@
 			<div class="col-md-2 user">
 				<div class="user-img"></div>
 				<h4><?php echo $_SESSION['SESS_FIRST_NAME'] ?></h4>
-				<p class="status">Conectado</p>
+				<p class="status">Conectado <span id="logout" style="color: red; margin-left: 10px;" class="glyphicon glyphicon-remove-circle"></span></p>
+
 				<ul>
 					<li><a id="list" href="#">PRODUCTOS</a></li>
 					<li><a id="list2" href="#">MARCAS</a></li>

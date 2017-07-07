@@ -12,14 +12,14 @@ class Marcas {
 		public $classic;
 		public $minerva;
 		public $bic;
-		public $estado;
 
 		public function __construct($db) {
 			$this->conn = $db;
 		}
 
 		function readAll(){
-			$query = "SELECT idmarcas, desconocidas, standfor, norma, classic, minerva, bic, estado FROM " . $this->table_name . " WHERE estado = '1' ORDER BY idmarcas DESC";
+			$query = "SELECT idmarcas, desconocidas, standfor, norma, classic, minerva, bic FROM " . $this->table_name . " WHERE idmarcas = '1' ORDER BY idmarcas DESC";
+			echo $query;
 
 			$stmt = $this->conn->prepare( $query );
 			$stmt-> execute();
