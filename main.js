@@ -2,10 +2,11 @@ $(document).ready(function(){
 	showProductos();
 	showMarcas();
 	logout();
+	add();
 
 	function showProductos(){
 		$('#list').click(function(){
-			changePageTitle('Lista de Productos');
+			changePageTitle('Lista de Articulos');
 			$('#page-content').load('read.php', function(){
 				$('#page-content').fadeIn('slow');
 			});
@@ -20,7 +21,7 @@ $(document).ready(function(){
 
 	function showMarcas(){
 		$('#list2').click(function(){
-			changePageTitle('Lista de Marcas');
+			changePageTitle('Lista de Articulos');
 			$('#page-content').load('read-marcas.php', function(){
 				$('#page-content').fadeIn('slow');
 			});
@@ -34,13 +35,39 @@ $(document).ready(function(){
 			});
 		});
 	}
+
+	function add() {
+		$('#btn-add').click(function() {
+			console.log('hola');
+			changePageTitle('Crear un Articulo');
+			$('#page-content').load('./create_form_articulo.php', function(){
+				$('#page-content').fadeIn('slow');
+				$('#btn-add').addClass('display-none');
+			});
+		});
+	}
+	
+
+
+	$(document).on('click', '.update-btn', function() {
+		var marca_id = $(this).closest('td').find('.marca-id').text();
+		changePageTitle('Editar Articulo');
+		$('#page-content').load('./update_form_articulo.php?id='+marca_id, function() {
+			$('#page-content').fadeIn('slow');
+			$('#btn-add').addClass('display-none');
+		});
+	});
+	
+
 	$(document).on('click', '.delete-btn', function(){
 		if (confirm('Estas Seguro?')) {
 			console.log(this)
 			var marca_id = $(this).closest('td').find('.marca-id').text();
 			$.post("delete.articulo.php", { id: marca_id })
 			.done( function(data){
-				showMarcas();
+				$('#page-content').load('read.php', function(){
+					$('#page-content').fadeIn('slow');
+				});
 			});
 		}
 	});

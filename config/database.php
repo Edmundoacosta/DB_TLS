@@ -3,7 +3,7 @@
 		private $host = 'localhost';
 		private $db_name = 'bd_bodega';
 		private $username = 'root';
-		private $password = '123456';
+		private $password = '';
 		public $conn;
 
 

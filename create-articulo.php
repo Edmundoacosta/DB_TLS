@@ -1,4 +1,5 @@
 <?php 
+
 include_once 'config/database.php';
 include_once 'objects/articulo.php';
 
@@ -8,7 +9,8 @@ $db = $database->getConnection();
 $m = new Articulo($db);
 
 $m->nombre=$_POST['nombre'];
-$m->desripcion=$_POST['descripcion'];
+$m->precio_compra=$_POST['precio_compra'];
+$m->precio_venta=$_POST['precio_venta'];
 $m->estado = "1";
 
 $m->create(); 

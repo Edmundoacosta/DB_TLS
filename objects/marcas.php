@@ -19,7 +19,6 @@ class Marcas {
 
 		function readAll(){
 			$query = "SELECT idmarcas, desconocidas, standfor, norma, classic, minerva, bic FROM " . $this->table_name . " WHERE idmarcas = '1' ORDER BY idmarcas DESC";
-			echo $query;
 
 			$stmt = $this->conn->prepare( $query );
 			$stmt-> execute();

@@ -28,20 +28,50 @@
 			return $stmt;
 		}
 
+		function selectbyid() {
+			$query = "SELECT * FROM " . $this->table_name . " WHERE id=" . $this->id;
+			$stmt = $this->conn->prepare( $query );
+			$stmt->execute();
+			return $stmt;
+		}
+
 		function create() {
-			$query = "INSERT INTO" . $this->table_name . "
+			$query = "INSERT INTO " . $this->table_name . "
 				SET
-					idarticulo=:idarticulo,
-					nombre=:nombre,
-					precio_compra=:precio_compra,
-					precio_venta=:precio_venta";
+					nombre = :nombre,
+					precio_compra = :precio_compra,
+					precio_venta = :precio_venta";
 
 			$stmt = $this->conn->prepare($query);
 
-			$stm->bindParam(':idarticulo', $this->idmarcas);
-			$stmt->bindParam(':nombre', $this->desconocidas);
+			$stmt->bindParam(':nombre', $this->nombre);
 			$stmt->bindParam(':precio_compra', $this->precio_compra);
 			$stmt->bindParam(':precio_venta', $this->precio_venta);
+
+			if ($stmt->execute()) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+
+		function update() {
+			$query = "UPDATE
+						" . $this->table_name . "
+					SET
+						nombre = :nombre,
+						precio_compra = :precio_compra,
+						precio_venta = :precio_venta
+					WHERE
+						id = :id";
+
+			$stmt = $this->conn->prepare($query);
+
+			$stmt->bindParam(":nombre", $this->nombre);
+			$stmt->bindParam(":precio_compra", $this->precio_compra);
+			$stmt->bindParam(":precio_venta", $this->precio_venta);
+
+			$stmt->bindParam(':id', $this->id);
 
 			if ($stmt->execute()) {
 				return true;
@@ -60,7 +90,6 @@
 
 
 			$stmt = $this->conn->prepare($query);
-			echo $query;
 
 			$stmt->bindParam(':estado', $this->estado);
 			$stmt->bindParam(':idarticulo', $this->idarticulo);
